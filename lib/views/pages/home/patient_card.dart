@@ -22,7 +22,7 @@ class PatientCard extends StatelessWidget {
           mainAxisAlignment:MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            CircleAvatar(radius: 40.sp,),
+            CircleAvatar(radius: 40.sp),
             SizedBox(height: 20.sp),
             Text(
               "Ali Jamal",
