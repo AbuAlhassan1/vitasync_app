@@ -8,6 +8,7 @@ class PatientsView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
+      bottom: false,
       child: GridView.builder(
         padding: EdgeInsets.only(left: 20.sp, right: 20.sp, top: 200.sp, bottom: 20.sp),
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
@@ -16,8 +17,8 @@ class PatientsView extends StatelessWidget {
           crossAxisSpacing: 15.sp,
           childAspectRatio: 6/7
         ),
-        itemCount: 20,
-        itemBuilder: (context, index) => const PatientCard(),
+        itemCount: 120,
+        itemBuilder: (context, index) => PatientCard(index: index),
       ),
     );
   }

@@ -8,6 +8,7 @@ class TextFieldDataObject implements FieldDataObject {
   late String name;
   late String? lable;
   late String? hint;
+  late IconData? icon;
   late String? error;
   late RegExp? regex;
   late TextEditingController controller;
@@ -20,6 +21,7 @@ class TextFieldDataObject implements FieldDataObject {
     required this.focusNode,
     required this.key,
     this.lable,
+    this.icon,
     this.error,
     this.hint,
     this.regex,
