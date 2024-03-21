@@ -1,4 +1,5 @@
 import 'package:clinic_app/models/textfield_model.dart';
+import 'package:clinic_app/views/shared/file_picker_button.dart';
 import 'package:clinic_app/views/shared/material_textfield.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -88,6 +89,33 @@ class AddPatientForm extends StatelessWidget {
             SizedBox(height: 20.sp),
             MaterialTextField(textFieldObject: pharmaceutical),
             SizedBox(height: 20.sp),
+            const FilePickerButton(),
+            SizedBox(height: 20.sp),
+            Row(
+              children: [
+                Expanded(
+                  child: OutlinedButton(
+                    onPressed: (){},
+                    style: ButtonStyle(
+                      padding: MaterialStatePropertyAll(EdgeInsets.symmetric(vertical: 20.sp)),
+                      backgroundColor: const MaterialStatePropertyAll(Colors.blue),
+                      shape: MaterialStatePropertyAll(RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(15.sp),
+                        side: const BorderSide(color: Colors.red)
+                      )),
+                      side: const MaterialStatePropertyAll(BorderSide.none)
+                    ),
+                    child: const Text(
+                      "Add",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            )
           ],
         ),
       )

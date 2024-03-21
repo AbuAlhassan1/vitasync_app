@@ -12,15 +12,31 @@ class HomePageWrapper extends StatelessWidget {
 
   Widget _buildBottomSheet(BuildContext context, ScrollController scrollController, double bottomSheetOffset) {
     return Material(
-      child: ListView(
-        controller: scrollController,
+      color: Colors.white,
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
         children: [
-          SizedBox(height: 20.sp),
-          const Switcher(),
-          SizedBox(height: 20.sp),
-          
-          // 
-          AddPatientForm()
+          Container(
+            width: 130.sp, height: 5.sp,
+            margin: EdgeInsets.symmetric(vertical: 20.sp),
+            decoration: BoxDecoration(
+              color: Colors.blue,
+              borderRadius: BorderRadius.circular(100)
+            ),
+          ),
+          Expanded(
+            child: ListView(
+              controller: scrollController,
+              children: [
+                // SizedBox(height: 20.sp),
+                const Switcher(),
+                SizedBox(height: 20.sp),
+                
+                // 
+                AddPatientForm()
+              ],
+            ),
+          ),
         ],
       ),
     );
@@ -38,10 +54,10 @@ class HomePageWrapper extends StatelessWidget {
             showFlexibleBottomSheet(
               minHeight: 0,
               initHeight: 0.5,
-              maxHeight: 1,
+              maxHeight: 0.8,
               context: context,
               builder: _buildBottomSheet,
-              anchors: [0, 0.5, 1],
+              anchors: [0, 0.5, 0.8],
               isSafeArea: true,
               bottomSheetBorderRadius: BorderRadius.vertical(top: Radius.circular(15.sp))
             );

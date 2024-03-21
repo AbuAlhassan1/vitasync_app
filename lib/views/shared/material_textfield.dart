@@ -1,7 +1,6 @@
 import 'package:clinic_app/models/textfield_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:syncfusion_flutter_xlsio/xlsio.dart';
 
 class MaterialTextField extends StatelessWidget {
   final TextFieldDataObject textFieldObject;
@@ -9,18 +8,20 @@ class MaterialTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Material(
-      // color: Colors.blue,
-      child: TextFormField(
-        decoration: InputDecoration(
-          fillColor: Colors.red,
-          isDense: true,
-          border: OutlineInputBorder(
-            borderSide: BorderSide(color: Colors.red.withOpacity(0.2)),
-            borderRadius: BorderRadius.circular(15.sp)
-          ),
-          labelText: textFieldObject.lable,
+    return TextFormField(
+      decoration: InputDecoration(
+        isDense: true,
+        filled: false,
+        enabledBorder: OutlineInputBorder(
+          borderSide: BorderSide(color: Colors.grey.withOpacity(0.2)),
+          borderRadius: BorderRadius.circular(15.sp),
         ),
+        focusedBorder: OutlineInputBorder(
+          borderSide: BorderSide(color: Colors.grey.withOpacity(0.8)),
+          borderRadius: BorderRadius.circular(15.sp),
+        ),
+        labelText: textFieldObject.lable,
+        labelStyle: const TextStyle(color: Colors.grey)
       ),
     );
   }
